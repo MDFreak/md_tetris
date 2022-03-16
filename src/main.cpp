@@ -23,7 +23,7 @@
   #define TFT_RST  22
   #define TFT_LED  15
   #define TOUCH_CS 14
-  #define LED_ON 0
+  #define LED_ON   1
 #endif
 #ifdef ESP8266
   #define TFT_CS   D1
@@ -414,6 +414,7 @@ void setup() {
   pinMode(TFT_LED,OUTPUT);
   digitalWrite(TFT_LED, LED_ON);
   Serial.println("Start");
+  while(0) {}
   //Display initialisieren
   tft.begin();
   tft.fillScreen(BACKGROUND);
