@@ -23,7 +23,7 @@
   #define TFT_RST  22
   #define TFT_LED  15
   #define TOUCH_CS 14
-  #define LED_ON   1
+  #define LED_ON   0
 #endif
 #ifdef ESP8266
   #define TFT_CS   D1
