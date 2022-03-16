@@ -414,10 +414,18 @@ void setup() {
   pinMode(TFT_LED,OUTPUT);
   digitalWrite(TFT_LED, LED_ON);
   Serial.println("Start");
-  while(0) {}
   //Display initialisieren
   tft.begin();
   tft.fillScreen(BACKGROUND);
+  while(1)
+    {
+        digitalWrite(TFT_LED, 1);
+  Serial.print(" ON");
+        delay(1000);
+        digitalWrite(TFT_LED, 0);
+  Serial.println(" OFF");
+        delay(1000);
+    }
   //Touchscreen vorbereiten
   Serial.println("  .. touch");
   touch.begin();
