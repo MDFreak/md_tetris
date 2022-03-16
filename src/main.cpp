@@ -415,53 +415,62 @@ void onClick(TS_Point p)
   }
 
 // ----------------------------------------
-void setup() {
-  Serial.begin(115200);
-  //Hintergrundbeleuchtung einschalten
-  pinMode(TFT_LED,OUTPUT);
-  digitalWrite(TFT_LED, LED_ON);
-  Serial.println("Start");
-  //Display initialisieren
-  tft.begin();
-  tft.fillScreen(BACKGROUND);
-  //Touchscreen vorbereiten
-  Serial.println("  .. touch");
-  touch.begin();
-  touch.setRotation(TOUCH_ROTATION);
-  tevent.setResolution(tft.width(),tft.height());
-  tevent.setDrawMode(false);
-  //Callback Funktion registrieren
-  tevent.registerOnTouchClick(onClick);
-  //tft.fillRect(LEFTMARGIN,TOPMARGIN,COLUMNS*BLOCKSIZE,ROWS*BLOCKSIZE,NOPIECE);
-  clearBoard();
-  //newPiece();
-  //Startzeit merken und Spielfeld l�schen
-  last = millis();
-  score=0;
-  displayScore();
-}
+void setup()
+  {
+    Serial.begin(115200);
+    Serial.println("Start ..");
+    //Hintergrundbeleuchtung einschalten
+    pinMode(TFT_LED,OUTPUT);
+    digitalWrite(TFT_LED, LED_ON);
+    //Display initialisieren
+    Serial.println(" .. tft");
+    tft.begin();
+    tft.fillScreen(BACKGROUND);
+    //Touchscreen vorbereiten
+    Serial.println(" .. touch");
+    touch.begin();
+    touch.setRotation(TOUCH_ROTATION);
+    tevent.setResolution(tft.width(),tft.height());
+    tevent.setDrawMode(false);
+    //Callback Funktion registrieren
+    tevent.registerOnTouchClick(onClick);
+    //tft.fillRect(LEFTMARGIN,TOPMARGIN,COLUMNS*BLOCKSIZE,ROWS*BLOCKSIZE,NOPIECE);
+    clearBoard();
+    //newPiece();
+    //Startzeit merken und Spielfeld loeschen
+    last = millis();
+    score=0;
+    displayScore();
+    Serial.println("  .. ready");
+  }
 
 // ----------------------------------------
 // Hauptschleife
-void loop() {
-  //Auf Touch Ereignisse pr�fen
-  tevent.pollTouchScreen();
-  //Immer wenn die Zeit intterval erreicht ist, wird das aktuelle Tetris-Teil
-  //um eine Zeile nach unten geschoben falls das m�glich ist.
-  //Kommt es dabei zu einer Kollision oder wird der untere Rand erreicht,
-  //so wird das Teil nicht verschoben sondern am Spielfeld verankert.
-  //Vollst�ndige Zeilen werden entfernt und ein neues Teil am oberen
-  //Rand eingef�gt
-  if ((curPiece > 0) && ((millis()-last) > interval)) {
-    last = millis();
-    if (checkPiece(curPiece,curCol,curRow+1)) {
-      hidePiece(curPiece,curCol,curRow);
-      curRow++;
-      showPiece(curPiece,curCol,curRow);
-    } else {
-      putPiece(curPiece,curCol,curRow);
-      removeComplete();
-      newPiece();
-    }
+void loop()
+  {
+    //Auf Touch Ereignisse pruefen
+    tevent.pollTouchScreen();
+    /* Immer wenn die Zeit intterval erreicht ist, wird das aktuelle Tetris-Teil
+       um eine Zeile nach unten geschoben falls das moeglich ist.
+       Kommt es dabei zu einer Kollision oder wird der untere Rand erreicht,
+       so wird das Teil nicht verschoben sondern am Spielfeld verankert.
+       Vollstaendige Zeilen werden entfernt und ein neues Teil am oberen
+       Rand eingefuegt
+     */
+    if ((curPiece > 0) && ((millis()-last) > interval))
+      {
+        last = millis();
+        if (checkPiece(curPiece,curCol,curRow+1))
+          {
+            hidePiece(curPiece,curCol,curRow);
+            curRow++;
+            showPiece(curPiece,curCol,curRow);
+          }
+          else
+          {
+            putPiece(curPiece,curCol,curRow);
+            removeComplete();
+            newPiece();
+          }
+      }
   }
-}
