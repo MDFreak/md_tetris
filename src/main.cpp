@@ -3,7 +3,7 @@
 #include <Adafruit_GFX.h> //Grafik Bibliothek
 #include <Adafruit_ILI9341.h> // Display Treiber
 #include <XPT2046_Touchscreen.h> //Touchscreen Treiber
-#include <TouchEvent.h> //Auswertung von Touchscreen Ereignissen
+#include <md_TouchEvent.h> //Auswertung von Touchscreen Ereignissen
 
 //Aussehen
 #define BACKGROUND ILI9341_GREENYELLOW //Farbe des Rahmens
@@ -38,7 +38,7 @@
 //Instanzen der Bibliotheken
 Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_RST);
 XPT2046_Touchscreen touch(TOUCH_CS);
-TouchEvent tevent(touch);
+md_TouchEvent tevent(touch);
 
 //Farben fuer die Bloecke
 const uint16_t colorBlock[8] =

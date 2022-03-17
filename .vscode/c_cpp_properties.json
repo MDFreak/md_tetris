@@ -10,7 +10,6 @@
             "includePath": [
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/include",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/src",
-                "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/TouchEvent/src",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341",
@@ -92,6 +91,7 @@
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/lib",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_FastLED/src",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_SPI/src",
+                "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_TouchEvent/src",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_buzzer/include",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_buzzer/src",
                 "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_fram/include",
@@ -157,7 +157,6 @@
                 "path": [
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/include",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/src",
-                    "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/TouchEvent/src",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/XPT2046_Touchscreen",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/Adafruit Unified Sensor",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_tetris/.pio/libdeps/az-delivery-devkit-v4/Adafruit ILI9341",
@@ -239,6 +238,7 @@
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/lib",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_FastLED/src",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_SPI/src",
+                    "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_TouchEvent/src",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_buzzer/include",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_buzzer/src",
                     "c:/Users/konta/Documents/PlatformIO/Projects/md_lib/md_fram/include",
